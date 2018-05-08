@@ -27,6 +27,6 @@ function setupColumns(columns){
 function setupCards(col, cards){
 	cards.forEach(function(card){
 	var cardObj = new Card(card.id, card.name, card.bootkamp_kanban_column_id);
-	col.addCard(cardObj);
+	createCard(cardObj);
 	})
 }

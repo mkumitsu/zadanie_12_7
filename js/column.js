@@ -25,11 +25,13 @@ function Column(id, name) {
         url: baseUrl + '/card',
         method: 'POST',
         data: {
-              //body query
+              name: cardName,
+			  bootcamp_kanban_column_id: self.id
         },
-        success: function() {
-            //create a new client side card
-        }
+        success: function(response) {
+        var card = new Card(response.id, cardName);
+        self.createCard(card);
+    }
     });
 });
 			
